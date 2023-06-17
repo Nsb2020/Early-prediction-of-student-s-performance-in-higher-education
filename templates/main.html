@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="static/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      function myFunction() { 
+        var age = $("#age").val();
+        var course = $("#course").val();
+        var tuition = $("#tuition").val();
+        var curricular1A = $("#curricular1A").val();
+        var curricular1E = $("#curricular1A").val();
+        var curricular1G = $("#curricular1A").val();
+        var curricular2A = $("#curricular1A").val();
+        var curricular2E = $("#curricular1A").val();
+        var curricular2G = $("#curricular1A").val();
+
+        var values = {
+          age,
+          course,  
+          tuition,
+          curricular1A,
+          curricular1E,
+          curricular1G,
+          curricular2A,
+          curricular2E,
+          curricular2G,
+        };
+
+        console.log(values)
+        $.ajax({
+          url: "/submit",
+          type: "POST",
+          data: JSON.stringify(values),
+          dataType: "json",
+          contentType: "application/json; charset=utf-8",
+    
+         
+        }).done(function (response) {
+          console.log('Response',response)
+        });
+
+      }
+    </script>
+
+  </head>
+  <body>
+    <h2>Early prediction of student's performance in higher education</h2>
+    <div class="container">
+        <div>
+          <label for="fname">Student Name</label>
+          <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name.."
+            /> 
+          
+          <label for="age">Age at Enrollment</label>
+          <input type="number" id="age" name="Age" />
+
+          <label for="course">Course of Study</label>
+          <select id="course" name="course">
+            <option value="33">Biofuel Production Technologies</option>
+            <option value="171">Animation and Multimedia Design</option>
+            <option value="8014">Social Service (evening attendance)</option>
+            <option value="9003">Agronomy</option>
+            <option value="9070">Communication Design</option>
+            <option value="9085">Veterinary Nursing</option>
+            <option value="9119">Informatics Engineering</option>
+            <option value="9130">Equinculture</option>
+            <option value="9147">Management</option>
+            <option value="9238">Social Service</option>
+            <option value="9254">Tourism</option>
+            <option value="9500">Nursing</option>
+            <option value="9556">Oral Hygiene</option>
+            <option value="9670">Advertising and Marketing Management</option>
+            <option value="9773">Journalism and Communication</option>
+            <option value="9853">Basic Education</option>
+            <option value="9991">Management (evening attendance)</option>
+          </select>
+
+          <label for="tuition">Is your Tuition Fees up to Date?</label>
+          <select id="tuition" name="tuition">
+            <option value=""></option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+
+          <label for="curricular1A">Age</label>
+          <input type="number" id="curricular1A" name="Curricular units" />
+
+          <label for="curricular1E">Age</label>
+          <input type="number" id="curricular1E" name="curricular1E" />
+
+          <label for="curricular1G">Age</label>
+          <input type="number" id="curricular1G" name="curricular1G" />
+
+          <label for="curricular2A">Age</label>
+          <input type="number" id="curricular2A" name="curricular2A" />
+
+          <label for="curricular2E">Age</label>
+          <input type="number" id="curricular2E" name="curricular2E" />
+
+          <label for="curricular2G">Age</label>
+          <input type="number" id="curricular2G" name="curricular2G" />
+        
+          <button id="clicked" onclick="myFunction()">Check</button>
+        </div>
+    </div>
+  </body>
+</html>
