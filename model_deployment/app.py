@@ -1,14 +1,13 @@
 from flask import Flask, request, render_template
-# import sklearn
-# import pickle
-# import joblib
-# import pandas as pd
+import sklearn
+import pickle
+import joblib
+import pandas as pd
 
 
 # Use pickle to load in the trained model
-# with open(f'model/.pkl', 'rb') as f:
-# model = joblib.load('model/.pkl')
-
+# with open(f'model/titanic_model_stkd.pkl', 'rb') as f:
+model = joblib.load('model/ensemble_classifier_model.pkl')
 
 app = Flask(__name__, template_folder='templates',
             static_folder='static')
@@ -33,7 +32,8 @@ def form_submit():
     Curricular2G = request.json['curricular2G']
 
     data = {
-        'Age': Age
+        'Age': Age,
+        #'Curricular units for 1st semester': 
     }
     print(data)
 
