@@ -4,7 +4,7 @@ h2 {
     color: #f2f2f2;
     width: 50%;
     margin: auto;
-    padding: 12px; 
+    padding: 10px; 
     
     }
     /* Styling */
@@ -52,3 +52,13 @@ input[type=text],input[type=number], select {
     width: 50%;
     margin: auto;  
   }
+  
+    /* CSS styles for the logo */
+    .logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      justify-content: center;
+      height: auto;
+    }
+  

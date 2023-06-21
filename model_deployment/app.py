@@ -51,15 +51,15 @@ def form_submit():
         result = 'Graduate'
     return jsonify(result=result, name=name)
 
-    name = data.get('name', '')
-    return redirect(url_for('show_result', result=result, name=name))
+    #name = data.get('name', '')
+    # return redirect(url_for('show_result', result=result, name=name))
 
 @app.route("/result")
 def show_result():
     result = request.args.get("result", "")
     name = request.args.get("name", "")
-    return render_template("result.html", result=result)
     return render_template("result.html", result=result, name=name)
+    #eturn render_template("result.html", result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)

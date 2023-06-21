@@ -40,14 +40,15 @@
         }).done(function (response) {
           console.log(response);
           // Render the response in the result.html template
-          window.location.href = "/result?result=" + response.result + "name=" + name;
+          window.location.href = "/result?result=" + response.result + "&name=" + response.name;
         });
       }
     </script>
 
   </head>
   <body>
-    <h2>Early prediction of student's performance in higher education</h2>
+    <img class="logo" src="static/logo.png" alt="Logo">
+    <h2>Early Prediction of Student's Performance in Higher Education</h2>
     <div class="container">
         <div>
           <label for="name">Student Name</label>
