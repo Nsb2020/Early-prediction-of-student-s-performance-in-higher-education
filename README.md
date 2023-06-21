@@ -1,5 +1,3 @@
-<img src="https://github.com/Nsb2020/Early-prediction-of-student-s-performance-in-higher-education/blob/main/Hamoye%20_Logo.png" style="height: 100%; width:100%;">   
-
 ## EARLY PREDICTION OF STUDENT’S PERFORMANCE IN HIGHER EDUCATION 
 ### PROJECT BY: TEAM GITHUB [HDSC spring '23]
 ## Introduction
