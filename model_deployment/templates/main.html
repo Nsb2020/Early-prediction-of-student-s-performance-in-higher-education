@@ -4,42 +4,44 @@
     <link rel="stylesheet" href="static/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-      function myFunction() { 
+      function myFunction() {
+        var name = $("#name").val();
         var age = $("#age").val();
         var course = $("#course").val();
         var tuition = $("#tuition").val();
         var curricular1A = $("#curricular1A").val();
-        var curricular1E = $("#curricular1A").val();
-        var curricular1G = $("#curricular1A").val();
-        var curricular2A = $("#curricular1A").val();
-        var curricular2E = $("#curricular1A").val();
-        var curricular2G = $("#curricular1A").val();
-
+        var curricular1EV = $("#curricular1EV").val();
+        var curricular1ER = $("#curricular1ER").val();
+        var curricular2A = $("#curricular2A").val();
+        var curricular2ER = $("#curricular2ER").val();
+        var curricular2EV = $("#curricular2EV").val();
+        var curricular2G = $("#curricular2G").val();
+    
         var values = {
+          name,
           age,
-          course,  
+          course,
           tuition,
           curricular1A,
-          curricular1E,
-          curricular1G,
+          curricular1EV,
+          curricular1ER,
           curricular2A,
-          curricular2E,
+          curricular2ER,
+          curricular2EV,
           curricular2G,
         };
-
-        console.log(values)
+    
         $.ajax({
           url: "/submit",
           type: "POST",
           data: JSON.stringify(values),
           dataType: "json",
           contentType: "application/json; charset=utf-8",
-    
-         
         }).done(function (response) {
-          console.log('Response',response)
+          console.log(response);
+          // Render the response in the result.html template
+          window.location.href = "/result?result=" + response.result + "name=" + name;
         });
-
       }
     </script>
 
@@ -48,7 +50,7 @@
     <h2>Early prediction of student's performance in higher education</h2>
     <div class="container">
         <div>
-          <label for="fname">Student Name</label>
+          <label for="name">Student Name</label>
           <input
               type="text"
               id="name"
@@ -91,17 +93,20 @@
           <label for="curricular1A">Curicular Units for 1st Semester (Approved)</label>
           <input type="number" id="curricular1A" name="Curricular units" />
 
-          <label for="curricular1E">Curicular Units for 1st Semester (Enrolled)</label>
-          <input type="number" id="curricular1E" name="curricular1E" />
+          <label for="curricular1EV">Curicular Units for 1st Semester (Evaluations)</label>
+          <input type="number" id="curricular1EV" name="curricular1EV" />
 
-          <label for="curricular1G">Curicular Units for 1st Semester (Graded)</label>
-          <input type="number" id="curricular1G" name="curricular1G" />
+          <label for="curricular1ER">Curicular Units for 1st Semester (Enrolled)</label>
+          <input type="number" id="curricular1ER" name="curricular1ER" />
 
           <label for="curricular2A">Curicular Units for 2nd Semester (Approved)</label>
           <input type="number" id="curricular2A" name="curricular2A" />
 
-          <label for="curricular2E">Curicular Units for 2nd Semester (Enrolled)</label>
-          <input type="number" id="curricular2E" name="curricular2E" />
+          <label for="curricular2ER">Curicular Units for 2nd Semester (Enrolled)</label>
+          <input type="number" id="curricular2ER" name="curricular2ER" />
+
+          <label for="curricular2EV">Curicular Units for 2nd Semester (Evaluations)</label>
+          <input type="number" id="curricular2EV" name="curricular2EV" />
 
           <label for="curricular2G">Curicular Units for 2nd Semester (Graded)</label>
           <input type="number" id="curricular2G" name="curricular2G" />

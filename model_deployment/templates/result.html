@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <h2>Result</h2>
+    <div class="container">
+      <h3>Name: <span id="name"></span></h3>
+      <h3>Prediction Result: <span id="result"></span></h3>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const result = urlParams.get('result');
+
+        document.getElementById('name').innerText = name;
+        document.getElementById('result').innerText = result;
+      });
+    </script>
+  </body>
+</html>
