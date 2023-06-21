@@ -22,8 +22,9 @@ These models were carefully chosen and implemented to effectively handle the imb
 
 
 ## Model Deployment
+The Flask framework was utilized to deploy the model on the Heroku platform, enabling real-time predictions for various life scenarios.
 ## Skills and Technologies
-* Programming (Python)
+* Python Libraries (Pandas & Numpy)
 * Data Preprocessing 
 * Exploratory Data Analysis
 * Data Visualization(Seaborn and Matplotlib)
@@ -32,6 +33,8 @@ These models were carefully chosen and implemented to effectively handle the imb
 * Google Collobarotory Notebook
 * VS Studio Code
 * Flask
+* Heroku
+*  HTML (Hypertext Markup Language) and CSS (Cascading Style Sheet)
 
 
 
